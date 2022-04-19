@@ -101,11 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const _chck_enter_callback = (e) => {
         if (e.keyCode == 13) {
             __click__callback();
-        } 
+        }
     }
 
     const _esc_key_callback = (e) => {
-        if (e.keyCode ==  27) {
+        if (e.keyCode == 27) {
             refresh();
         }
     }
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* find divisble numbers */
 function divisibleNums(num) {
     let result = new Array();
-    const sqpoint = Math.floor(Math.sqrt(num));
+    const sqpoint = __bf(Math.sqrt(num));
 
     result.push(1);
     for (let i = 2; i < sqpoint; ++i) {
@@ -190,9 +190,8 @@ function divisibleNums(num) {
  *  @param {in} to 
  *  @returns [int]
  */
-const generateRandom = (from, to) => {
-    return ~~(+Math.random() * to + from) | 0;
-}
+const generateRandom = (from, to) => 0 | ~~(+Math.random() * to + from);
+
 
 /* arithmetic operations */
 const add = (a, b) => a + b;
@@ -201,5 +200,11 @@ const mul = (a, b) => __bi(a, b);
 const div = (a, b) => a / b;
 
 /** Variables */
-const $answeroption01 = new Uint8Array([67, 111, 114, 114, 101, 99, 116, 44, 32, 103, 111, 111, 100, 32, 119, 111, 114, 107, 0]);
-const $answeroption02 = new Uint8Array([73, 110, 99, 111, 114, 114, 101, 99, 116, 44, 32, 116, 114, 121, 32, 97, 103, 97, 105, 110]);
+const $answeroption01 = new Uint8Array([
+    67, 111, 114, 114, 101, 99, 116, 44, 32, 103, 111, 111, 100, 32, 119, 111,
+    114, 107, 0
+]);
+const $answeroption02 = new Uint8Array([
+    73, 110, 99, 111, 114, 114, 101, 99, 116, 44, 32, 116, 114, 121, 32, 97,
+    103, 97, 105, 110, 0
+]);
