@@ -6,33 +6,33 @@
  *  Author      :   Mehmet Ekemen
  *  Nickname    :   `hun
  *  Email       :   ekemenms@hotmail.com
- *  Date        :   18.04.2022 (DD-MM-YYYY)  (Updated)
+ *  Date        :   20.04.2022 (DD-MM-YYYY)  (Updated)
  *  Github      :   github.com/hun756
  *  Resource    :   https://github.com/hun756/Javascript4OperationMathGame
 **/
 
-const __bi = Math.imul, __bf = Math.floor, __td = new TextDecoder();
+const __bi = Math.imul, __bf = (x)=> ~~x, __td = new TextDecoder();
 
 /** 
  * Application starting point.
 **/
 document.addEventListener('DOMContentLoaded', () => {
     console.clear();
-
+    
     /** Game Variables */
-    const inputElem = document.getElementById('inputElem');
-    const checkButton = document.getElementById('chck-btn');
-    const reloadButton = document.getElementById('reload');
+    const inputElem = byId('inputElem'),
+    checkButton = byId('chck-btn'),
+    reloadButton = byId('reload');
 
     /** Modal Variables */
-    const modal = document.getElementById('modal');
-    const theAnswer = document.querySelector('.theAnswer');
-    const closeButton = document.querySelector('.close');
+    const modal = byId('modal'),
+    theAnswer = byQS('.theAnswer'),
+    closeButton = byQS('.close');
 
     /** Ask Variables */
-    const op = document.querySelector('.op');
-    const num1 = document.querySelector('.blue')
-    const num2 = document.querySelector('.red')
+    const op = byQS('.op'),
+    num1 = byQS('.blue'),
+    num2 = byQS('.red')
 
     /** Answer Options */
     let answerOptions = [
@@ -181,6 +181,16 @@ function divisibleNums(num) {
     result.push(num);
     return result;
 }
+
+/**
+ * @param {string} x
+ */
+const byId = (x) => document.getElementById(x); 
+
+/**
+ * @param {string} x
+ */
+const byQS = (x) => document.querySelector(x);
 
 /** Generate Random */
 /**
